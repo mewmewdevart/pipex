@@ -22,7 +22,7 @@ HEADER_PATH = ./include/
 # Path to libraries
 LIBFT_PATH = $(LIBS_PATH)libft/
 # Sources files
-SRCS_FILES = utils.c \
+SRCS_FILES = error_message.c \
 
 # Object files
 OBJS_FILES = $(patsubst %.c, $(OBJS_PATH)%.o, $(SRCS_FILES))
