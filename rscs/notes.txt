@@ -1,3 +1,11 @@
+Links to study:
+	https://www.guiadopc.com.br/artigos/693/prompt-do-linux-stdin-stdout-stderr-e-seus-truques-parte-i.html
+	https://www.youtube.com/watch?v=VFRr_3lRnNU
+	https://www.youtube.com/watch?v=hZeh6zIhgCg
+	https://www.youtube.com/watch?v=enJ21TJ8rFQ
+	https://www.techtarget.com/whatis/definition/pipe#:~:text=Generally%2C%20a%20pipe%20is%20a,or%20more%20commands%20or%20programs.
+	https://www.oilshell.org/blog/2016/10/18.html
+
 Makefile command:
 party:
 					@printf "\033c"
