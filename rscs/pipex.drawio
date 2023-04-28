@@ -1,80 +1,113 @@
-<mxfile host="app.diagrams.net" modified="2023-04-27T20:49:00.766Z" agent="5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/109.0.0.0 Safari/537.36" etag="IuR_Som8KiwNuswWs45O" version="20.5.1" type="github">
+<mxfile host="app.diagrams.net" modified="2023-04-28T23:14:55.706Z" agent="Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.0.0 Safari/537.36" etag="xKTxiaHCy87Tph9b9HPP" version="21.2.3" type="github">
   <diagram id="r3Cyv7eAtzsNoePGAPpG" name="Page-1">
-    <mxGraphModel dx="1422" dy="782" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+    <mxGraphModel dx="989" dy="459" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
-        <mxCell id="f8M--fkL82V79Hv856r--1" value="FUNÇÕES PERMITIDAS" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fillColor=#D2DAFF;strokeColor=#D2DAFF;" vertex="1" parent="1">
+        <mxCell id="f8M--fkL82V79Hv856r--1" value="FUNÇÕES PERMITIDAS" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fillColor=#D2DAFF;strokeColor=#D2DAFF;" parent="1" vertex="1">
           <mxGeometry x="40" y="40" width="160" height="40" as="geometry" />
         </mxCell>
-        <mxCell id="f8M--fkL82V79Hv856r--2" value="&lt;ul&gt;&lt;li&gt;&amp;nbsp;open():&amp;nbsp;open and possibly create a file.&lt;/li&gt;&lt;/ul&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+        <mxCell id="f8M--fkL82V79Hv856r--2" value="&lt;ul&gt;&lt;li&gt;&amp;nbsp;open():&amp;nbsp;open and possibly create a file.&lt;/li&gt;&lt;/ul&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
           <mxGeometry x="40" y="80" width="360" height="40" as="geometry" />
         </mxCell>
-        <mxCell id="f8M--fkL82V79Hv856r--3" value="&lt;ul&gt;&lt;li&gt;close() : close a file descriptor.&lt;br&gt;&lt;/li&gt;&lt;/ul&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+        <mxCell id="f8M--fkL82V79Hv856r--3" value="&lt;ul&gt;&lt;li&gt;close() : close a file descriptor.&lt;br&gt;&lt;/li&gt;&lt;/ul&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
           <mxGeometry x="40" y="120" width="360" height="40" as="geometry" />
         </mxCell>
-        <mxCell id="f8M--fkL82V79Hv856r--4" value="&lt;ul&gt;&lt;li&gt;read():&amp;nbsp; read from a file.&lt;br&gt;&lt;/li&gt;&lt;/ul&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+        <mxCell id="f8M--fkL82V79Hv856r--4" value="&lt;ul&gt;&lt;li&gt;read():&amp;nbsp; read from a file.&lt;br&gt;&lt;/li&gt;&lt;/ul&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
           <mxGeometry x="40" y="160" width="360" height="40" as="geometry" />
         </mxCell>
-        <mxCell id="f8M--fkL82V79Hv856r--5" value="&lt;ul&gt;&lt;li&gt;write() : write on a file.&lt;br&gt;&lt;/li&gt;&lt;/ul&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+        <mxCell id="f8M--fkL82V79Hv856r--5" value="&lt;ul&gt;&lt;li&gt;write() : write on a file.&lt;br&gt;&lt;/li&gt;&lt;/ul&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
           <mxGeometry x="40" y="200" width="360" height="40" as="geometry" />
         </mxCell>
-        <mxCell id="f8M--fkL82V79Hv856r--7" value="&lt;ul&gt;&lt;li&gt;malloc(): allocate and free dynamic memory.&lt;br&gt;&lt;/li&gt;&lt;/ul&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+        <mxCell id="f8M--fkL82V79Hv856r--7" value="&lt;ul&gt;&lt;li&gt;malloc(): allocate and free dynamic memory.&lt;br&gt;&lt;/li&gt;&lt;/ul&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
           <mxGeometry x="40" y="240" width="360" height="40" as="geometry" />
         </mxCell>
-        <mxCell id="f8M--fkL82V79Hv856r--8" value="&lt;ul&gt;&lt;li&gt;free(): function frees the memory space.&lt;br&gt;&lt;/li&gt;&lt;/ul&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+        <mxCell id="f8M--fkL82V79Hv856r--8" value="&lt;ul&gt;&lt;li&gt;free(): function frees the memory space.&lt;br&gt;&lt;/li&gt;&lt;/ul&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
           <mxGeometry x="40" y="280" width="360" height="40" as="geometry" />
         </mxCell>
-        <mxCell id="f8M--fkL82V79Hv856r--9" value="&lt;ul&gt;&lt;li&gt;perror(): print a system error message.&lt;/li&gt;&lt;/ul&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+        <mxCell id="f8M--fkL82V79Hv856r--9" value="&lt;ul&gt;&lt;li&gt;perror(): print a system error message.&lt;/li&gt;&lt;/ul&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
           <mxGeometry x="40" y="320" width="360" height="40" as="geometry" />
         </mxCell>
-        <mxCell id="f8M--fkL82V79Hv856r--10" value="&lt;ul&gt;&lt;li&gt;sterror(): return string describing error number.&lt;/li&gt;&lt;/ul&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+        <mxCell id="f8M--fkL82V79Hv856r--10" value="&lt;ul&gt;&lt;li&gt;sterror(): return string describing error number.&lt;/li&gt;&lt;/ul&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
           <mxGeometry x="40" y="360" width="360" height="40" as="geometry" />
         </mxCell>
-        <mxCell id="f8M--fkL82V79Hv856r--11" value="&lt;ul&gt;&lt;li&gt;access(): check real user&#39;s permissions for a file.&lt;/li&gt;&lt;/ul&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+        <mxCell id="f8M--fkL82V79Hv856r--11" value="&lt;ul&gt;&lt;li&gt;access(): check real user&#39;s permissions for a file.&lt;/li&gt;&lt;/ul&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
           <mxGeometry x="40" y="400" width="360" height="40" as="geometry" />
         </mxCell>
-        <mxCell id="f8M--fkL82V79Hv856r--12" value="&lt;ul&gt;&lt;li&gt;dup(): duplicate a file descriptor - uses the lowest-numbered unused descriptor for the new descriptor.&lt;/li&gt;&lt;/ul&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+        <mxCell id="f8M--fkL82V79Hv856r--12" value="&lt;ul&gt;&lt;li&gt;dup(): duplicate a file descriptor - uses the lowest-numbered unused descriptor for the new descriptor.&lt;/li&gt;&lt;/ul&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
           <mxGeometry x="40" y="440" width="720" height="40" as="geometry" />
         </mxCell>
-        <mxCell id="f8M--fkL82V79Hv856r--13" value="&lt;ul&gt;&lt;li&gt;dup2(): duplicate a file descriptor -&amp;nbsp;&amp;nbsp;makes newfd be the copy of oldfd, closing newfd first if necessary, but note the following&lt;/li&gt;&lt;/ul&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+        <mxCell id="f8M--fkL82V79Hv856r--13" value="&lt;ul&gt;&lt;li&gt;dup2(): duplicate a file descriptor -&amp;nbsp;&amp;nbsp;makes newfd be the copy of oldfd, closing newfd first if necessary, but note the following&lt;/li&gt;&lt;/ul&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
           <mxGeometry x="40" y="480" width="720" height="40" as="geometry" />
         </mxCell>
-        <mxCell id="f8M--fkL82V79Hv856r--14" value="&lt;ul&gt;&lt;li&gt;execve(): execute program&lt;/li&gt;&lt;/ul&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+        <mxCell id="f8M--fkL82V79Hv856r--14" value="&lt;ul&gt;&lt;li&gt;execve(): execute program&lt;/li&gt;&lt;/ul&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
           <mxGeometry x="40" y="520" width="720" height="40" as="geometry" />
         </mxCell>
-        <mxCell id="f8M--fkL82V79Hv856r--15" value="&lt;ul&gt;&lt;li&gt;exit(): terminate the calling process&lt;/li&gt;&lt;/ul&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+        <mxCell id="f8M--fkL82V79Hv856r--15" value="&lt;ul&gt;&lt;li&gt;exit(): terminate the calling process&lt;/li&gt;&lt;/ul&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
           <mxGeometry x="40" y="560" width="720" height="40" as="geometry" />
         </mxCell>
-        <mxCell id="f8M--fkL82V79Hv856r--16" value="&lt;ul&gt;&lt;li&gt;fork(): create a child process&lt;/li&gt;&lt;/ul&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+        <mxCell id="f8M--fkL82V79Hv856r--16" value="&lt;ul&gt;&lt;li&gt;fork(): create a child process&lt;/li&gt;&lt;/ul&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
           <mxGeometry x="40" y="600" width="720" height="40" as="geometry" />
         </mxCell>
-        <mxCell id="f8M--fkL82V79Hv856r--17" value="&lt;ul&gt;&lt;li&gt;pipe(): create pipe&lt;/li&gt;&lt;/ul&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+        <mxCell id="f8M--fkL82V79Hv856r--17" value="&lt;ul&gt;&lt;li&gt;pipe(): create pipe&lt;/li&gt;&lt;/ul&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
           <mxGeometry x="40" y="640" width="720" height="40" as="geometry" />
         </mxCell>
-        <mxCell id="f8M--fkL82V79Hv856r--18" value="&lt;ul&gt;&lt;li&gt;unline: delete a name and possibly the file it refers to&lt;/li&gt;&lt;/ul&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+        <mxCell id="f8M--fkL82V79Hv856r--18" value="&lt;ul&gt;&lt;li&gt;unline: delete a name and possibly the file it refers to&lt;/li&gt;&lt;/ul&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
           <mxGeometry x="40" y="680" width="720" height="40" as="geometry" />
         </mxCell>
-        <mxCell id="f8M--fkL82V79Hv856r--19" value="&lt;ul&gt;&lt;li&gt;wait(): wait for a child process to stop or terminate&lt;/li&gt;&lt;/ul&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+        <mxCell id="f8M--fkL82V79Hv856r--19" value="&lt;ul&gt;&lt;li&gt;wait(): wait for a child process to stop or terminate&lt;/li&gt;&lt;/ul&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
           <mxGeometry x="40" y="720" width="720" height="40" as="geometry" />
         </mxCell>
-        <mxCell id="f8M--fkL82V79Hv856r--20" value="&lt;ul&gt;&lt;li&gt;waitpid(): wait for process to change state.&lt;/li&gt;&lt;/ul&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+        <mxCell id="f8M--fkL82V79Hv856r--20" value="&lt;ul&gt;&lt;li&gt;waitpid(): wait for process to change state.&lt;/li&gt;&lt;/ul&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
           <mxGeometry x="40" y="760" width="720" height="40" as="geometry" />
         </mxCell>
-        <mxCell id="f8M--fkL82V79Hv856r--25" value="ESTUDAR : FUNCIONAMENTO" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fillColor=#D2DAFF;strokeColor=#D2DAFF;" vertex="1" parent="1">
+        <mxCell id="f8M--fkL82V79Hv856r--25" value="ESTUDAR : FUNCIONAMENTO" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fillColor=#D2DAFF;strokeColor=#D2DAFF;" parent="1" vertex="1">
           <mxGeometry x="920" y="40" width="240" height="40" as="geometry" />
         </mxCell>
-        <mxCell id="f8M--fkL82V79Hv856r--28" value="[&amp;nbsp; ] :&amp;nbsp;&amp;nbsp;open, close, read, write, malloc, free, perror, strerror, access, dup, dup2, execve, exit, fork, pipe, unlink, wait, waitpid" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+        <mxCell id="f8M--fkL82V79Hv856r--28" value="[&amp;nbsp; ] :&amp;nbsp;&amp;nbsp;open, close, read, write, malloc, free, perror, strerror, access, dup, dup2, execve, exit, fork, pipe, unlink, wait, waitpid" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
           <mxGeometry x="960" y="120" width="680" height="40" as="geometry" />
         </mxCell>
-        <mxCell id="f8M--fkL82V79Hv856r--29" value="Estudar o funcionamento separado de cada uma das funções enquanto faz anotações sobre o seu funcionamento:" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+        <mxCell id="f8M--fkL82V79Hv856r--29" value="Estudar o funcionamento separado de cada uma das funções enquanto faz anotações sobre o seu funcionamento:" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
           <mxGeometry x="920" y="80" width="680" height="40" as="geometry" />
         </mxCell>
-        <mxCell id="f8M--fkL82V79Hv856r--30" value="[&amp;nbsp; ] :&amp;nbsp;&amp;nbsp;Testar os diferentes tipos de operadores unix capazes de manipular entrada/saida." style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+        <mxCell id="f8M--fkL82V79Hv856r--30" value="[&amp;nbsp; ] :&amp;nbsp;&amp;nbsp;Testar os diferentes tipos de operadores unix capazes de manipular entrada/saida." style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
           <mxGeometry x="960" y="200" width="680" height="40" as="geometry" />
         </mxCell>
-        <mxCell id="f8M--fkL82V79Hv856r--31" value="Entender como o pipe funciona por debaixo do capô através de pesquisas e desenvolver um codigo." style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+        <mxCell id="f8M--fkL82V79Hv856r--31" value="Entender como o pipe funciona por debaixo do capô através de pesquisas e desenvolver um codigo." style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
           <mxGeometry x="920" y="160" width="680" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="gPUgKTZ3C45c-TH2uGkL-1" value="FORK" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fillColor=#D2DAFF;strokeColor=#D2DAFF;" vertex="1" parent="1">
+          <mxGeometry x="40" y="880" width="240" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="gPUgKTZ3C45c-TH2uGkL-6" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="gPUgKTZ3C45c-TH2uGkL-3" target="gPUgKTZ3C45c-TH2uGkL-5">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="gPUgKTZ3C45c-TH2uGkL-9" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" edge="1" parent="1" source="gPUgKTZ3C45c-TH2uGkL-3" target="gPUgKTZ3C45c-TH2uGkL-8">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="gPUgKTZ3C45c-TH2uGkL-3" value="Fork()" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="40" y="1060" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="gPUgKTZ3C45c-TH2uGkL-5" value="Fork() = 0" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="250" y="1000" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="gPUgKTZ3C45c-TH2uGkL-8" value="Fork() &amp;gt; 0" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="250" y="1110" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="gPUgKTZ3C45c-TH2uGkL-10" value="&lt;p style=&quot;line-height: 130%;&quot;&gt;&lt;font color=&quot;#b9c0e0&quot;&gt;child process&lt;/font&gt;&lt;/p&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="260" y="970" width="100" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="gPUgKTZ3C45c-TH2uGkL-11" value="&lt;p style=&quot;line-height: 130%;&quot;&gt;&lt;font color=&quot;#b9c0e0&quot;&gt;parent process&lt;/font&gt;&lt;/p&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="260" y="1170" width="100" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="gPUgKTZ3C45c-TH2uGkL-19" value="O PID é um número único que identifica o processo no sistema e é usado pelo sistema operacional para gerenciar e controlar o processo." style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="400" y="880" width="760" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="gPUgKTZ3C45c-TH2uGkL-22" value="Se o comando fork() for chamado com sucesso, child process recebe (0) enquanto o parent process recebe um valor maior do que zero. O codigo, heap, stack e recursos do sistema operacional de ambos são iguais com excessão do PID." style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="400" y="910" width="570" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="gPUgKTZ3C45c-TH2uGkL-23" value="If fork() system call returns a negative value, it implies that the creation of the process was unsuccessful.&lt;br&gt;&lt;br&gt;If a new child process is created, fork() system call returns zero. fork() system call returns a positive value and the process ID of the child process to the parent." style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="425" y="750" width="570" height="60" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
