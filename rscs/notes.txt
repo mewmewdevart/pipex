@@ -1,3 +1,5 @@
+UNix process: https://www.youtube.com/watch?v=cex9XrZCU14&list=PLfqABt5AS4FkW5mOn2Tn9ZZLLDwA3kZUY
+
 DUP:
 	A duplicação de descritor de arquivo é frequentemente usada para permitir que o processo redirecione a entrada ou saída padrão para outro arquivo ou soquete. Por exemplo, se um programa precisa imprimir a saída em um arquivo em vez da saída padrão (normalmente o terminal), ele pode duplicar o descritor de arquivo do arquivo desejado usando a função dup(), fechar o descritor original e, em seguida, redirecionar a saída padrão para o novo descritor duplicado.
 
