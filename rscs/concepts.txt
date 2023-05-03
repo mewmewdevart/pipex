@@ -1,0 +1,25 @@
+Tobe continue: https://www.youtube.com/watch?v=uh2FqejQRk8&list=PLfqABt5AS4FkW5mOn2Tn9ZZLLDwA3kZUY&index=11
+
+- FIFO: make a FIFO special file (a named pipe)
+- Description: FIFO, também conhecido como "named pipe", é um tipo especial de arquivo no sistema Unix que permite a comunicação entre processos através de um canal de comunicação unidirecional.
+
+	int mkfifo(const char *pathname, mode_t mode);
+
+FIFO é um arquivo especial de nomeação que permite a comunicação unidirecional entre processos, como se fosse um canal de comunicação unidirecional. O FIFO é criado no sistema de arquivos e funciona como um arquivo regular, exceto que é mantido na memória principal e é acessado por processos em execução.
+
+----------------------------------------------------------
+
+- PIPE: create pipe
+- Description: PIPE é uma ferramenta de redirecionamento de entrada e saída padrão do shell do Unix, que permite que os dados gerados por um processo sejam redirecionados para a entrada de outro processo. 
+
+	int pipe2(int pipefd[2], int flags);
+PIPE é usado para conectar a saída de um processo à entrada de outro processo, permitindo a transferência de dados entre eles.
+
+Observação o "|" do unix e a função pipe() da linguagem c tem comportamentos diferentes:
+	No shell do Unix, o operador "|" é usado para conectar o stdout (saída padrão) de um processo ao stdin (entrada padrão) de outro processo. Isso significa que o processo à esquerda do pipe escreve dados que são lidos pelo processo à direita do pipe.
+
+	Na função pipe() em C, os dados são transferidos usando os descritores de arquivo que representam as extremidades de leitura e escrita do pipe. A função write() é usada para escrever dados na extremidade de escrita do pipe, enquanto a função read() é usada para ler dados na extremidade de leitura do pipe.
+
+Diferença entre FIFO E PIPE:
+	Em resumo, a principal diferença entre FIFO e PIPE é que FIFO é um arquivo especial de nomeação usado para comunicação entre processos, enquanto PIPE é uma ferramenta de redirecionamento de entrada e saída padrão do shell do Unix usada para conectar a saída de um processo à entrada de outro processo.
+
