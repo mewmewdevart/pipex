@@ -1,5 +1,14 @@
 Tobe continue: https://www.youtube.com/watch?v=uh2FqejQRk8&list=PLfqABt5AS4FkW5mOn2Tn9ZZLLDwA3kZUY&index=11
 
+	Arguments to main: https://learn.microsoft.com/en-us/cpp/c-language/arguments-to-main?view=msvc-170
+	Redirecting standard output in C : https://www.youtube.com/watch?v=5fnVr-zH-SE&list=PLfqABt5AS4FkW5mOn2Tn9ZZLLDwA3kZUY&index=14
+
+FIle Descriptors:
+	0	stdin
+	1	stdout
+	2	stderr
+	3	pingResult.txt
+
 - FIFO: make a FIFO special file (a named pipe)
 - Description: FIFO, também conhecido como "named pipe", é um tipo especial de arquivo no sistema Unix que permite a comunicação entre processos através de um canal de comunicação unidirecional.
 
