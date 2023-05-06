@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   executingCommands.c                                :+:      :+:    :+:   */
+/*   executingCommands2.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: larcrist <larcrist@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/03 18:06:27 by larcrist          #+#    #+#             */
-/*   Updated: 2023/05/04 15:23:03 by larcrist         ###   ########.fr       */
+/*   Updated: 2023/05/04 16:32:08 by larcrist         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,17 +22,28 @@
 int	main(int argc, char **argv)
 {
 	int	pid;
+	int	err;
+	int	wstatus;
+	int	statusCode;
 
 	pid = fork();
 	if (pid == 0)
 	{
-		execlp("ping", "ping", "-c", "3", "google.com", NULL);
-		printf("# The execlp replace everything in the child process! This like is not to be executed!");
+		err = execlp("ping", "ping", "-c", "3", "google.com", NULL);
+		if (err == -1)
+			return (0);
 	}
 	else
 	{
-		wait(NULL);
-		printf("Sucess!\n");
+		wait(&wstatus);
+		if (WIFEXITED(wstatus))
+		{
+			statusCode = WIFEXITED(swatus);
+			if(statusCode == 0) //0 is sucess
+				printf("Sucess!\n");
+			else
+				printf("Failed in the status code %d!\n", statusCode);
+		} 
 		printf("Some post processing goes here!\n");
 	}
 	return (0);
