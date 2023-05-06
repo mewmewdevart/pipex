@@ -15,14 +15,20 @@
 
 # include "../libs/libft/includes/libft.h"
 
+# include <sys/types.h> // Wait
+# include <sys/wait.h> // Wait
+# include <stdio.h> 
+# include <unistd.h> // Write, access, fork, pid, envp
 # include <fcntl.h> // Read
 # include <string.h> // Strerror
-
+# include <errno.h> // Errno
 
 // --------------------- CUSTOM ERRORS MESSAGE
+// The pipex controller to calling for process's
+void            pipex(int argc, char **argv, char **envp);
 // Function to print initialization errors
 void			ft_errors_init(int number_error);
-// Function to print pipe errors
-void			ft_errors_pipe(int number_error);
+// Function to print process errors
+void            ft_errors_process(int number_error);
 
 #endif

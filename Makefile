@@ -51,7 +51,7 @@ all : $(NAME)
 $(NAME) : $(OBJS_FILES)
 	@$(MKDIR) $(BINS_PATH)
 	@make -C $(LIBFT_PATH) --no-print-directory
-	@$(CC) $(CFLAGS) $(OBJS_FILES) -o $(NAME) $(SRCS_PATH)main.c $(PATH_LIBS) $(LFLAGS)
+	@$(CC) $(CFLAGS) $(OBJS_FILES) -o $(NAME) $(SRCS_PATH)pipex.c $(PATH_LIBS) $(LFLAGS)
 	@echo "$(GREEN) ________  ___  ________  _______      ___    ___  "
 	@echo "$(GREEN)|\   __  \|\  \|\   __  \|\  ___ \    |\  \  /  /| "
 	@echo "$(GREEN)\ \  \|\  \ \  \ \  \|\  \ \   __/|   \ \  \/  / / "
