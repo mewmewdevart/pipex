@@ -24,8 +24,27 @@ This is a  Pipex project involves creating a pipeline in Unix systems with four 
 
 These processes are created using the fork() system call and communicate through pipes using the pipe() and dup2() system calls. The aim of the project is for each process to execute its specific task and pass the data to the next process in the pipeline until the output file is generated. <br>
 
-Mandatory part: <br>
-- [ ] to be continue..
+- [ ] Mandatory part: <br>
+
+The program should be executed as follows:
+```bash
+$ ./pipex file1 cmd1 cmd2 file2
+```
+Where each parameter in the command line is: <br>
+	• file1 and file2 are file names. <br>
+	• cmd1 and cmd2 are shell commands with their parameters. <br>
+It must behave exactly the same as the shell command below: <br>
+```bash
+$ < file1 cmd1 | cmd2 > file2
+```
+In the desired format:
+```bash
+$ ./pipex infile "ls -l" "wc -l" outfile
+```
+It should behave the same as:
+```bash
+< infile ls -l | wc -l > outfile
+```
 
 Bonus part: <br>
 - [ ] to be continue..
@@ -63,11 +82,16 @@ $ cd pipex/
 # Run the command make root directory
 $ make
 
-#	To execute it, run the following command and ... :
-$ ./bin/pipex
+#	To execute it, run the following command :
+$ ./bin/pipex file1 cmd1 cmd2 file2
+#	Example:
+$ ./bin/pipex infile.txt "ls -l" "wc -l" outfile.txt
+#	This command lists the files and directories in a detailed format from the infile.txt
+# file and counts the number of lines in the output, storing the result in the outfile.txt file.
 ```
 
-
+## 👩🏾‍💻 How my code works:
+//Soon
 
 ## 🦾 Technologies
 
