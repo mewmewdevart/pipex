@@ -23,6 +23,7 @@ HEADER_PATH = ./include/
 LIBFT_PATH = $(LIBS_PATH)libft/
 # Sources files
 SRCS_FILES = error_message.c \
+	pipex_utils.c \
 
 # Object files
 OBJS_FILES = $(patsubst %.c, $(OBJS_PATH)%.o, $(SRCS_FILES))

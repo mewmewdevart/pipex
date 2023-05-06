@@ -25,10 +25,15 @@
 
 // --------------------- CUSTOM ERRORS MESSAGE
 // The pipex controller to calling for process's
-void            pipex(int argc, char **argv, char **envp);
+void            pipex(char **argv, char **envp);
 // Function to print initialization errors
 void			ft_errors_init(int number_error);
 // Function to print process errors
 void            ft_errors_process(int number_error);
+
+void			ft_child_process(char **argv, char **envp, int *fd);
+void			ft_parent_process(char **argv, char **envp, int *fd);
+
+void ft_execute_commands(char *argv, char **envp);
 
 #endif
