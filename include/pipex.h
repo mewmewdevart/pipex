@@ -23,17 +23,19 @@
 # include <string.h> // Strerror
 # include <errno.h> // Errno
 
-// --------------------- CUSTOM ERRORS MESSAGE
-// The pipex controller to calling for process's
-void            pipex(char **argv, char **envp);
-// Function to print initialization errors
-void			ft_errors_init(int number_error);
-// Function to print process errors
-void            ft_errors_process(int number_error);
-
+// This function is the controller for executing the pipex process. 
+void			pipex(char **argv, char **envp);
+// This function is executed by the child process.
 void			ft_child_process(char **argv, char **envp, int *fd);
+// This function is executed by the parent process.
 void			ft_parent_process(char **argv, char **envp, int *fd);
-
-void ft_execute_commands(char *argv, char **envp);
+//  This function is responsible for executing the commands.
+void			ft_execute_commands(char *argv, char **envp);
+//  This function finds the correct path for a given command.
+char			*ft_correct_path(char *command, char **envp);
+// This function is responsible for printing initialization errors.
+void			ft_errors_init(int number_error);
+// This function is responsible for printing process errors.
+void			ft_errors_process(int number_error);
 
 #endif

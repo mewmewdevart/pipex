@@ -23,13 +23,14 @@ int	main(int argc, char **argv, char **envp)
 	{
 		while (i <= 4)
 		{
+			/* 
 			// Check if you have permission to access F_OK (flag for files)
 			if (access(argv[i], F_OK) != 0)
 				ft_errors_init(2);
 			if (i == 1 && access(argv[i], R_OK) != 0) // Permission to read
 				ft_errors_init(13);
 			if (i == 4 && access(argv[i], W_OK) != 0) // Permission to write
-				ft_errors_init(13);
+				ft_errors_init(13); */
 			i++;
 		}
 		pipex(argv, envp);
@@ -37,13 +38,16 @@ int	main(int argc, char **argv, char **envp)
 	return (0);
 }
 
-// The pipex controller to calling for process's
+/*
+	This function is the controller for executing the pipex process.
+It takes in argv and envp as parameters and manages the execution of child
+and parent processes
+*/
 void	pipex(char **argv, char **envp)
 {
 	int		fd[2];
 	pid_t	pid;
 
-	// The pipe creates a communication channel that will be used by the child process and the parent process
 	if (pipe(fd) == -1)
 		ft_errors_process(32);
 	pid = fork();
@@ -53,7 +57,6 @@ void	pipex(char **argv, char **envp)
 		ft_child_process(argv, envp, fd);
 	else
 	{
-		// Wait for process to change the status
 		if (waitpid(pid, NULL, 0) == -1)
 			ft_errors_process(4);
 		ft_parent_process(argv, envp, fd);
@@ -61,26 +64,54 @@ void	pipex(char **argv, char **envp)
 	return ;
 }
 
-void ft_child_process(char** argv, char** envp, int *fd)
+/*
+	A child process function : It takes the return value of the open
+function in argv[1], duplicates the file descriptor using dup2 to
+redirect the input and output, and to calls the execute function
+*/
+void	ft_child_process(char **argv, char **envp, int *fd)
 {
-	int input_file;
+	int	input_file;
 
-	ft_printf("\nEstou no ft_child_process!\n");
 	input_file = open(argv[1], O_RDONLY, 0777);
 	if (input_file == -1)
 		ft_errors_process(4);
-	dup2(fd[0], STDOUT_FILENO);
+	if (dup2(fd[1], STDOUT_FILENO) == -1)
+	{
+		close(fd[1]);
+		ft_errors_process(4);
+	}
+	if (dup2(input_file, STDIN_FILENO) == -1)
+	{
+		close(input_file);
+		ft_errors_process(4);
+	}
+	close(fd[0]);
 	ft_execute_commands(argv[2], envp);
 }
 
-void ft_parent_process(char** argv, char** envp, int *fd)
+/*
+		A parent process function: It opens the output file
+specified in argv[4] and duplicates the file descriptors using dup2
+to redirect the input and output. Then, it calls the execute function
+*/
+void	ft_parent_process(char **argv, char **envp, int *fd)
 {
-	int output_file;
+	int	output_file;
 
-	ft_printf("\nEstou no ft_parent_process!\n");
-	output_file = open(argv[4], O_WRONLY | O_APPEND | O_TRUNC , 0777);
+	output_file = open(argv[4], O_WRONLY | O_APPEND | O_TRUNC, 0777);
 	if (output_file == -1)
 		ft_errors_process(4);
-	(void)fd;
+	if (dup2(fd[0], STDIN_FILENO) == -1)
+	{
+		close(fd[0]);
+		ft_errors_process(4);
+	}
+	if (dup2(output_file, STDOUT_FILENO) == -1)
+	{
+		close(output_file);
+		ft_errors_process(4);
+	}
+	close(fd[1]);
 	ft_execute_commands(argv[3], envp);
 }
