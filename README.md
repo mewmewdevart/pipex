@@ -110,7 +110,7 @@ Pipex is a program to executes the pipex process. It takes command line argument
 Error message for number_error 2: "Error. No such file or directory!" <br>
 Error message for number_error 5: "Error. Input/Output error!" <br>
 Error message for number_error 13: "Error. Permission denied!" <br>
-Error message for number_error 22: "Error. Invalid argument! Ex: ./pipex <file1> <cmd1> <cmd2> <file2>" <br>
+Error message for number_error 22: "Error. Invalid argument! Ex: ./pipex \<file1\> \<cmd1\> \<cmd2> \<file2\>" <br>
 After printing the error message, the function calls exit(1) to terminate the program with a non-zero exit status. <br>
 The ft_errors_process function is similar to ft_errors_init but with different errors messages and type of number error.
 
