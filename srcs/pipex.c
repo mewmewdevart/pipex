@@ -12,30 +12,31 @@
 
 #include "../include/pipex.h"
 
-int	main(int argc, char **argv, char **envp)
+int main(int argc, char **argv, char **envp)
 {
-	int	i;
+	int	output_file;
 
-	i = 1;
 	if (argc != 5)
 		ft_errors_init(22);
+	else if (access(argv[1], F_OK) != 0) // o file nao existe
+		ft_errors_init(2);
+	else if (access(argv[1], R_OK) != 0) // sem permissao pra lê
+		ft_errors_init(13);
 	else
 	{
-		while (i <= 4)
+		if ((access(argv[4], F_OK) != 0)) // o file nao existe
 		{
-			/* 
-			// Check if you have permission to access F_OK (flag for files)
-			if (access(argv[i], F_OK) != 0)
-				ft_errors_init(2);
-			if (i == 1 && access(argv[i], R_OK) != 0) // Permission to read
-				ft_errors_init(13);
-			if (i == 4 && access(argv[i], W_OK) != 0) // Permission to write
-				ft_errors_init(13); */
-			i++;
+			output_file = open(argv[4], O_WRONLY | O_CREAT | O_TRUNC, 0777);
+			if (output_file == -1)
+            	ft_errors_init(5);
+			close(output_file);
 		}
+		if (access(argv[4], W_OK) != 0) // sem permissao pra lê
+            ft_errors_init(13);
 		pipex(argv, envp);
 	}
-	return (0);
+		pipex(argv, envp);
+	return 0;
 }
 
 /*
