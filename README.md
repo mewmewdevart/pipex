@@ -91,11 +91,42 @@ $ ./bin/pipex infile.txt "ls -l" "wc -l" outfile.txt
 ```
 
 ## 👩🏾‍💻 How my code works:
-//Soon
+Pipex is a program to executes the pipex process. It takes command line arguments (argv) and environment variables (envp) as parameters. 
+
+####  The pipex file
+- The first condition of main function, checks if the number of arguments is equal to 5. If no, it calls for error. If the argument count is correct, it proceeds to check the permissions of the input file specifieid in argv[1]. If the file dosent exist or if there is no a read permission, it calls  for error. If the input file exist and have read permission, it checks if the outtput file specified in argv[4] exists. If the output file dosent exist, it creates it with write permissions. If the creation fails or if there is no write permission, it calls errors with the corresponding error codes. <br> After performing the necessary checks and file operations, the program calls the pipex function, passing argv and envp as arguments. <br>
+- The pipex function sets up a pipe using the pipe system call and creates a child process using fork. If the fork call fails, it calls for error. If the process is the child process, it calls the ft_child_process function passing argv, envp, and the file descriptors of the pipe. <br>
+- In the ft_child_process function, it opens the input file specified in argv[1] and duplicates the file descriptor using dup2 to redirect the input and output. Then, it calls the ft_execute_commands function with argv[2] (the command) and envp. <br>
+- In the parent process, it waits for the child process to finish using waitpid and then calls the ft_parent_process function. In the ft_parent_process function, it opens the output file specified in argv[4] and duplicates the file descriptors using dup2 to redirect the input and output. Finally, it calls the ft_execute_commands function with argv[3] (the command) and envp. <br>
+
+####  The pipex utils
+- The ft_execute_commands function split the command string into individual arguments, finds the correct path for the command by searching through the directories specified in the PATH environment variable, and attempt to execute the command using execve. <br>
+- The ft_correct_path function finds the correct path for a given command by searching inside the directories specified in the PATH environment variable. <br>
+- The ft_get_directories function extracts the directories specified in the PATH environment variable and returns them as an array of strings. <br>
+
+####  The errors output
+- The code includes two error handling functions: ft_errors_init and ft_errors_process. These functions are responsible for printing error messages and terminating the program with an exit status of 1.
+- The ft_errors_init function takes an int parameter number_error, which represents the specific error code. Based on the value of number_error, it prints an appropriate error message using ft_printf (check the libft library). The possible error messages include: <br>
+Error message for number_error 2: "Error. No such file or directory!" <br>
+Error message for number_error 5: "Error. Input/Output error!" <br>
+Error message for number_error 13: "Error. Permission denied!" <br>
+Error message for number_error 22: "Error. Invalid argument! Ex: ./pipex <file1> <cmd1> <cmd2> <file2>" <br>
+After printing the error message, the function calls exit(1) to terminate the program with a non-zero exit status. <br>
+The ft_errors_process function is similar to ft_errors_init but with different errors messages and type of number error.
 
 ## 🦾 Technologies
+- [VS CODE](https://www.eclipse.org/downloads/) |  I'm a fan of Vim but due to the size of the project, I opted to use Vscode.
+- [GNU Compiler Collection](https://gcc.gnu.org/) | A suite of programming language compilers developed by the GNU Project for C, C++, Objective-C, Fortran, Ada, and other languages
+- [GNU Make](https://www.gnu.org/software/make/) | A build automation tool for compiling and linking software projects
+- A classic notebook to take some notes about the project
 
 ## 🔗 References
+- [Markdown](https://www.markdownguide.org/basic-syntax/) | Documentation on how to use Markdown.
+- Internet forums and blogs to address my doubts related to the language (Alura, Stack Overflow, and Geeks for Geeks).
+- Google Translate/Chagpt to translate some parts of content that were in another language.
+- [CodeVault](https://youtu.be/cex9XrZCU14) | He have a awesome playlist about how the unix process work!
+- [Chagpt](https://chat.openai.com/chat) | To addressing my questions and providing exercises that helped me understand the behavior of certain functions
+- 42SP Cadets and others pipex projects and testers| :)
 
 ## 📜  License
 This project is licensed under the terms of the [LICENSE](https://github.com/mewmewdevart/pipex/blob/main/LICENSE) file. See the file for more details. <br>
