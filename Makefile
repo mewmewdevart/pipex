@@ -62,7 +62,13 @@ $(NAME) : $(OBJS_FILES)
 	@echo "$(GREEN)    \|__|     \|__|\|__|     \|_______/__/ /\ __\  " 
 	@echo "$(GREEN)                                      |__|/ \|__|  "
 	@echo "$(GREEN)◞( ､ᐛ)､＿/ The Makefile of [PIPEX] has been compiled!$(DEF_COLOR)"
-	@echo "$(YELLOW)\n !Use this command in the folder root: ./pipex <action> \n$(DEF_COLOR)" 
+	@echo "$(YELLOW)\n ! Use this command in the folder root: ./bin/pipex file1 cmd1 cmd2 file2\n$(DEF_COLOR)"
+	@echo "$(YELLOW) Where each parameter in the command line is:$(DEF_COLOR)"
+	@echo "$(YELLOW) • file1 and file2 are file names$(DEF_COLOR)" 
+	@echo "$(YELLOW) • cmd1 and cmd2 are shell commands with their parameters$(DEF_COLOR)"
+	@echo "$(YELLOW) Example: \n Create one file called \"infile\" with one word, inside and in sequence execute this command line: $(DEF_COLOR)" 
+	@echo "$(YELLOW)		./bin/pipex infile \"cat\" \"wc -l\" outfile$(DEF_COLOR)"
+	@echo "$(YELLOW)The information write inside the \"oufile\" is $\1 .$(DEF_COLOR)" 
 
 # Compiles C source files into object files
 $(OBJS_PATH)%.o : $(SRCS_PATH)%.c
