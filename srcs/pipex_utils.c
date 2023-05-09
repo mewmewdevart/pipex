@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   pipex_utils.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: larcrist <larcrist@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: larcrist <larcrist@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/07 14:33:25 by larcrist          #+#    #+#             */
-/*   Updated: 2023/05/07 14:33:26 by larcrist         ###   ########.fr       */
+/*   Updated: 2023/05/09 12:57:52 by larcrist         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,4 +84,25 @@ static char	**ft_get_directories(char **envp)
 		i++;
 	directories = ft_split(envp[i] + 5, ':');
 	return (directories);
+}
+
+/*
+	The ft_strspn function is used to determine the length of the initial
+segment of a string (s1) that only contains characters present in another 
+string (s2).
+*/
+size_t	ft_strspn(const char *s1, const char *s2)
+{
+	size_t		count;
+
+	count = 0;
+	while (*s1)
+	{
+		if (ft_strchr(s2, *s1))
+			count++;
+		else
+			break ;
+		s1++;
+	}
+	return (count);
 }

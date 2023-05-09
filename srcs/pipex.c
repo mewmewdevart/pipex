@@ -3,40 +3,42 @@
 /*                                                        :::      ::::::::   */
 /*   pipex.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: larcrist <larcrist@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: larcrist <larcrist@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/06 09:06:10 by larcrist          #+#    #+#             */
-/*   Updated: 2023/05/06 09:06:11 by larcrist         ###   ########.fr       */
+/*   Updated: 2023/05/09 12:56:48 by larcrist         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/pipex.h"
 
-int main(int argc, char **argv, char **envp)
+int	main(int argc, char **argv, char **envp)
 {
 	int	output_file;
 
 	if (argc != 5)
 		ft_errors_init(22);
-	else if (access(argv[1], F_OK) != 0) // o file nao existe
+	else if (access(argv[1], F_OK) != 0)
 		ft_errors_init(2);
-	else if (access(argv[1], R_OK) != 0) // sem permissao pra lê
+	else if (access(argv[1], R_OK) != 0)
 		ft_errors_init(13);
+	else if (ft_extension_arguments(argv) == 1)
+		ft_errors_init(5);
 	else
 	{
-		if ((access(argv[4], F_OK) != 0)) // o file nao existe
+		if ((access(argv[4], F_OK) != 0))
 		{
 			output_file = open(argv[4], O_WRONLY | O_CREAT | O_TRUNC, 0777);
 			if (output_file == -1)
-            	ft_errors_init(5);
+				ft_errors_init(5);
 			close(output_file);
 		}
-		if (access(argv[4], W_OK) != 0) // sem permissao pra lê
-            ft_errors_init(13);
+		if (access(argv[4], W_OK) != 0)
+			ft_errors_init(13);
 		pipex(argv, envp);
 	}
-		pipex(argv, envp);
-	return 0;
+	pipex(argv, envp);
+	return (0);
 }
 
 /*
@@ -115,4 +117,13 @@ void	ft_parent_process(char **argv, char **envp, int *fd)
 	}
 	close(fd[1]);
 	ft_execute_commands(argv[3], envp);
+}
+
+// Extension of main checker : argv[3] is not invalid
+int	ft_extension_arguments(char **argv)
+{
+	if (ft_strlen(argv[3]) == 0
+		|| ft_strspn(argv[3], " \t\n\r") == ft_strlen(argv[3]))
+		return (1);
+	return (0);
 }
