@@ -6,7 +6,7 @@
 /*   By: larcrist <larcrist@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/06 09:06:10 by larcrist          #+#    #+#             */
-/*   Updated: 2023/05/09 12:56:48 by larcrist         ###   ########.fr       */
+/*   Updated: 2023/05/09 16:28:10 by larcrist         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -119,9 +119,12 @@ void	ft_parent_process(char **argv, char **envp, int *fd)
 	ft_execute_commands(argv[3], envp);
 }
 
-// Extension of main checker : argv[3] is not invalid
+// Extension of main checker : argv[2] and argv[3] are valid
 int	ft_extension_arguments(char **argv)
 {
+	if (ft_strlen(argv[2]) == 0
+		|| ft_strspn(argv[2], " \t\n\r") == ft_strlen(argv[2]))
+		return (1);
 	if (ft_strlen(argv[3]) == 0
 		|| ft_strspn(argv[3], " \t\n\r") == ft_strlen(argv[3]))
 		return (1);
