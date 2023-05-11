@@ -6,7 +6,7 @@
 /*   By: larcrist <larcrist@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/07 14:33:25 by larcrist          #+#    #+#             */
-/*   Updated: 2023/05/09 12:57:52 by larcrist         ###   ########.fr       */
+/*   Updated: 2023/05/11 16:52:41 by larcrist         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,8 @@ void	ft_execute_commands(char *argv, char **envp)
 		while (command[++i])
 			free(command[i]);
 		free(command);
-		ft_errors_process(3);
+		write(2, "Error\nCommand not found!", 25);
+		exit(1);
 	}
 	if (execve(path, command, envp) == -1)
 		ft_errors_process(3);
