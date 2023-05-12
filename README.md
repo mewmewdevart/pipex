@@ -86,8 +86,8 @@ $ make
 $ ./bin/pipex file1 cmd1 cmd2 file2
 #	Example:
 $ ./bin/pipex infile.txt cat "wc -l" outfile.txt
-#	This command line, take the content inside of infile file, counts the number of lines in the infile 
-# file and return the information inside the outfile file. 
+#	This command line, take the content inside of infile file, counts the number of 
+# lines in the infile file and return the information inside the outfile file. 
 # Compares the same result in your shell:
 $ < infile cat | wc -l  > outfile
 
