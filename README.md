@@ -28,7 +28,7 @@ These processes are created using the fork() system call and communicate through
 
 The program should be executed as follows:
 ```bash
-$ ./pipex file1 cmd1 cmd2 file2
+$ ./bin/pipex file1 cmd1 cmd2 file2
 ```
 Where each parameter in the command line is: <br>
 	• file1 and file2 are file names. <br>
@@ -45,9 +45,6 @@ It should behave the same as:
 ```bash
 < infile ls -l | wc -l > outfile
 ```
-
-Bonus part: <br>
-- [ ] to be continue..
 
 ## 📁 Structure/
 * ```include/```  The header file of the pipex project.
@@ -93,19 +90,27 @@ $ < infile cat | wc -l  > outfile
 
 ```
 
-## 👩🏾‍💻 How my code works:
+## 👩🏾‍💻 How my code works: Project Workflow
 Pipex is a program to executes the pipex process. It takes command line arguments (argv) and environment variables (envp) as parameters. 
 
 ####  The pipex file
-- The first condition of main function, checks if the number of arguments is equal to 5. If no, it calls for error. If the argument count is correct, it proceeds to check the permissions of the input file specifieid in argv[1]. If the file dosent exist or if there is no a read permission, it calls  for error. If the input file exist and have read permission, it checks if the outtput file specified in argv[4] exists. If the output file dosent exist, it creates it with write permissions. If the creation fails or if there is no write permission, it calls errors with the corresponding error codes. <br> After performing the necessary checks and file operations, the program calls the pipex function, passing argv and envp as arguments. <br>
-- The pipex function sets up a pipe using the pipe system call and creates a child process using fork. If the fork call fails, it calls for error. If the process is the child process, it calls the ft_child_process function passing argv, envp, and the file descriptors of the pipe. <br>
-- In the ft_child_process function, it opens the input file specified in argv[1] and duplicates the file descriptor using dup2 to redirect the input and output. Then, it calls the ft_execute_commands function with argv[2] (the command) and envp. <br>
-- In the parent process, it waits for the child process to finish using waitpid and then calls the ft_parent_process function. In the ft_parent_process function, it opens the output file specified in argv[4] and duplicates the file descriptors using dup2 to redirect the input and output. Finally, it calls the ft_execute_commands function with argv[3] (the command) and envp. <br>
+- The main function receives the command-line arguments (argc and argv) and the environment variables (envp). It performs several checks on the arguments and the input/output files to ensure they are valid.<br>
+- If the arguments are valid, the main function proceeds to execute the pipex function.<br>
+- The pipex function sets up a pipe using the pipe system call and creates two child processes using fork.<br>
+- In the parent process, the pid1 and pid2 variables store the process IDs of the child processes. The parent process then waits for both child processes to finish using the waitpid system call.<br>
+- The ft_wait_process function is responsible for closing the pipe's file descriptors and waiting for the child processes to finish. <br>
+- In the child process (pid1), the ft_child_process function is executed. It opens the input file specified in argv[1] and duplicates the file descriptor using the dup2 system call to redirect the input to the pipe. It also duplicates the file descriptor for the output file and redirects the output to the pipe. Finally, it closes unnecessary file descriptors and calls the ft_execute_commands function to execute the command specified in argv[2].
+- In the other child process (pid2), the ft_parent_process function is executed. It opens the output file specified in argv[4] and duplicates the file descriptor using the dup2 system call to redirect the input from the pipe. It also duplicates the file descriptor for the output file and redirects the output to the output file. Finally, it closes unnecessary file descriptors and calls the ft_execute_commands function to execute the command specified in argv[3].
 
-####  The pipex utils
-- The ft_execute_commands function split the command string into individual arguments, finds the correct path for the command by searching through the directories specified in the PATH environment variable, and attempt to execute the command using execve. <br>
-- The ft_correct_path function finds the correct path for a given command by searching inside the directories specified in the PATH environment variable. <br>
-- The ft_get_directories function extracts the directories specified in the PATH environment variable and returns them as an array of strings. <br>
+####  The utils file
+- The ft_execute_commands function splits and executes the specified commands separately. It checks if the command is an absolute or relative path. If it is, it executes the command using execve. If not, it searches for the command in specific directories based on the environment variables (envp) using the ft_search_directories function. If the command is not found, it executes a second specified command. <br>
+- The ft_search_directories function searches for a command in the directories obtained from the "PATH" environment variable. It concatenates the directories with the command and checks if the command exists in any of that paths. <br>
+
+####  The auxiliary functions : 
+These auxiliary functions provide support for validating arguments and manipulating strings in the project's execution flow. (Norminette rules dont aceppt more than 5 functions in one file) <br>
+
+- The ft_extension_arguments function checks if argv[2] and argv[3] are valid arguments by verifying their length and content.  <br>
+- The ft_strspn function calculates the length of the initial segment of a string that consists entirely of characters not present in another string.  <br>
 
 ####  The errors output
 - The code includes two error handling functions: ft_errors_init and ft_errors_process. These functions are responsible for printing error messages and terminating the program with an exit status of 1.
@@ -116,6 +121,25 @@ Error message for number_error 13: "Error. Permission denied!" <br>
 Error message for number_error 22: "Error. Invalid argument! Ex: ./pipex \<file1\> \<cmd1\> \<cmd2> \<file2\>" <br>
 After printing the error message, the function calls exit(1) to terminate the program with a non-zero exit status. <br>
 The ft_errors_process function is similar to ft_errors_init but with different errors messages and type of number error.
+<br>
+Btw, the workflow involves checking arguments, setting up pipes and child processes, redirecting input/output, executing commands, and handling errors throughout the process.
+
+
+## 💫 Tests
+The different tests that can be performed on the command line for this program result in different error messages being displayed as output. Here is a summary of the tests;
+- [x] Invalid arguments test: Running the program without exactly four arguments will result in an "Invalid argument" error. <br>
+- [x] Non-existent input file test: If the file specified as the first argument does not exist.  <br>
+- [x] Input file read permission test: If the file specified as the first argument does not have read permission. <br>
+- [x] Valid argument extension test: It checks whether the arguments provided as argv[2] and argv[3] are valid. If either of them is an empty string or contains only whitespace characters. <br>
+- [x] Output file creation test: If the file specified as the fourth argument does not exist, the program will attempt to create it with read and write permissions. If an error occurs while creating the file. <br>
+- [x] Output file write permission test: If the file specified as the fourth argument does not have write permission. <br>
+- [x] Pipe creation error test: If an error occurs while creating the pipe using the pipe() function, the program will display the "Broken pipe. <br>
+- [x] Child process creation error test: If an error occurs while creating the child process using the fork() function. <br>
+- [x] Parent process creation error test: If an error occurs while creating the parent process using the fork() function. <br>
+- [x] Error during waiting for child and parent processes test: If an error occurs during waiting for the child and parent processes using the waitpid() function.br>
+- [x] Error during command execution test: If an error occurs while executing the command using the execve() function. <br>
+<br>
+ I have created an error handling message for different tests on the command line in case an error occurs that I haven't been able to anticipate. Please open an issue.
 
 ## 🦾 Technologies
 - [VS CODE](https://www.eclipse.org/downloads/) |  I'm a fan of Vim but due to the size of the project, I opted to use Vscode.
