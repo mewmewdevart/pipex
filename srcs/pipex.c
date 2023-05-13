@@ -12,6 +12,8 @@
 
 #include "../include/pipex.h"
 
+static void	ft_wait_process(int *fd, int pid1, int pid2);
+
 int	main(int argc, char **argv, char **envp)
 {
 	int	output_file;
@@ -37,34 +39,49 @@ int	main(int argc, char **argv, char **envp)
 			ft_errors_init(13);
 		pipex(argv, envp);
 	}
-	pipex(argv, envp);
 	return (0);
 }
 
 /*
-	This function is the controller for executing the pipex process.
-It takes in argv and envp as parameters and manages the execution of child
-and parent processes
+   This function is the controller for executing the pipex process.
+It takes in `argv` and `envp` as parameters and manages the execution
+of child and parent processes.
 */
+
 void	pipex(char **argv, char **envp)
 {
 	int		fd[2];
-	pid_t	pid;
+	pid_t	pid1;
+	pid_t	pid2;
 
 	if (pipe(fd) == -1)
 		ft_errors_process(32);
-	pid = fork();
-	if (pid == -1)
+	pid1 = fork();
+	if (pid1 == -1)
 		ft_errors_process(3);
-	else if (pid == 0)
+	else if (pid1 == 0)
 		ft_child_process(argv, envp, fd);
 	else
 	{
-		if (waitpid(pid, NULL, 0) == -1)
-			ft_errors_process(4);
-		ft_parent_process(argv, envp, fd);
+		pid2 = fork();
+		if (pid2 == -1)
+			ft_errors_process(3);
+		else if (pid2 == 0)
+			ft_parent_process(argv, envp, fd);
+		else
+			ft_wait_process(fd, pid1, pid2);
 	}
 	return ;
+}
+
+static void	ft_wait_process(int *fd, int pid1, int pid2)
+{
+	close(fd[0]);
+	close(fd[1]);
+	if (waitpid(pid1, NULL, 0) == -1)
+		ft_errors_process(4);
+	if (waitpid(pid2, NULL, 0) == -1)
+		ft_errors_process(4);
 }
 
 /*
@@ -90,6 +107,7 @@ void	ft_child_process(char **argv, char **envp, int *fd)
 		ft_errors_process(4);
 	}
 	close(fd[0]);
+	close(input_file);
 	ft_execute_commands(argv[2], envp);
 }
 
@@ -102,7 +120,7 @@ void	ft_parent_process(char **argv, char **envp, int *fd)
 {
 	int	output_file;
 
-	output_file = open(argv[4], O_WRONLY | O_APPEND | O_TRUNC, 0777);
+	output_file = open(argv[4], O_WRONLY | O_TRUNC, 0777);
 	if (output_file == -1)
 		ft_errors_process(4);
 	if (dup2(fd[0], STDIN_FILENO) == -1)
@@ -116,17 +134,6 @@ void	ft_parent_process(char **argv, char **envp, int *fd)
 		ft_errors_process(4);
 	}
 	close(fd[1]);
+	close(fd[output_file]);
 	ft_execute_commands(argv[3], envp);
-}
-
-// Extension of main checker : argv[2] and argv[3] are valid
-int	ft_extension_arguments(char **argv)
-{
-	if (ft_strlen(argv[2]) == 0
-		|| ft_strspn(argv[2], " \t\n\r") == ft_strlen(argv[2]))
-		return (1);
-	if (ft_strlen(argv[3]) == 0
-		|| ft_strspn(argv[3], " \t\n\r") == ft_strlen(argv[3]))
-		return (1);
-	return (0);
 }
