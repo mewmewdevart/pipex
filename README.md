@@ -1,7 +1,10 @@
-<h1 align="center">
- Pipex  (⚠️ in development)
-</h1>
+<p align="center">
+  <img src="https://github.com/mewmewdevart/pipex/assets/50052600/c9e1f323-4391-4a16-8f91-4896ebbc49cd" alt="Badge Pipex"/>
+</p>
 
+<h1 align="center">
+ Pipex
+</h1>
 
 <p align="center">
 	<b><i>A project that teaches inter-process communication using pipes, recreating shell pipelines.  </i></b><br>
