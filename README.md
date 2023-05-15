@@ -27,7 +27,7 @@ This is a  Pipex project involves creating a pipeline in Unix systems with four 
 
 These processes are created using the fork() system call and communicate through pipes using the pipe() and dup2() system calls. The aim of the project is for each process to execute its specific task and pass the data to the next process in the pipeline until the output file is generated. <br>
 
-- [ ] Mandatory part: <br>
+- [x] Mandatory part: <br>
 
 The program should be executed as follows:
 ```bash
@@ -56,7 +56,6 @@ It should behave the same as:
 * ```objs/``` Keeps all the .o files produced throughout the compilation process.
 * ```rscs/``` Just my notes and researches about the project.
 * ```srcs/```  Where the artcode happens!<br>
-
 
 ## 🛠️ Usage
 
@@ -92,6 +91,13 @@ $ ./bin/pipex infile.txt cat "wc -l" outfile.txt
 $ < infile cat | wc -l  > outfile
 
 ```
+Others examples:
+ ```bash
+# Suggestions of tests: 
+$ ./bin/pipex infile /usr/bin/cat /usr/bin/ls outfile
+
+$ ./bin/pipex infile /dev/urandom cat "head -1" outfile
+ ```
 
 ## 👩🏾‍💻 How my code works: Project Workflow
 Pipex is a program to executes the pipex process. It takes command line arguments (argv) and environment variables (envp) as parameters. 
